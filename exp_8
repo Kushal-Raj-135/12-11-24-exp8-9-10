@@ -256,3 +256,107 @@ d635aa2 8th exp3 demo
 c0ad508 8th exp2 demo
 9206c52 8th exp demo
 
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (master)
+$ git branch
+* master
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (master)
+$ git branch feature
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (master)
+$ git branch
+  feature
+* master
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ vi file4.txt
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git file
+git: 'file' is not a git command. See 'git --help'.
+
+The most similar commands are
+        cat-file
+        ls-files
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ ls
+file1.txt  file2.txt  file3.txt  file4.txt  first.c
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git add file4.txt
+warning: in the working copy of 'file4.txt', LF will be replaced by CRLF the next time Git touches it
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git commit -m "feature branch commit"
+[feature 4422c75] feature branch commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git log --oneline
+4422c75 (HEAD -> feature) feature branch commit
+60fdeec (master) Revert "printf statement is not required"
+536a4c8 printf statement is added
+54329ee error fixed - semicolon
+9095597 c program - variable declaration
+d635aa2 8th exp3 demo
+c0ad508 8th exp2 demo
+9206c52 8th exp demo
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git cherry-pick ^C
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git cherry-pick 54329ee
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+On branch feature
+You are currently cherry-picking commit 54329ee.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature|CHERRY-PICKING)
+$ git commit --allow-empty
+[feature 57b56d4] error fixed - semicolon ---cherry-picked from feature branch
+ Date: Tue Nov 12 11:24:40 2024 +0530
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ git cherry-pick 54329ee
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+On branch feature
+You are currently cherry-picking commit 54329ee.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature|CHERRY-PICKING)
+$ git log --oneline
+57b56d4 (HEAD -> feature) error fixed - semicolon ---cherry-picked from feature branch
+4422c75 feature branch commit
+60fdeec (master) Revert "printf statement is not required"
+536a4c8 printf statement is added
+54329ee error fixed - semicolon
+9095597 c program - variable declaration
+d635aa2 8th exp3 demo
+c0ad508 8th exp2 demo
+9206c52 8th exp demo
+
