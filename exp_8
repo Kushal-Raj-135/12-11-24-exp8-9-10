@@ -360,3 +360,25 @@ d635aa2 8th exp3 demo
 c0ad508 8th exp2 demo
 9206c52 8th exp demo
 
+\\it shows the commits whn they were dont optional
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature)
+$ gitk
+
+\\this shows changes made to a single commit
+Student@DESKTOP-UO7UP5P MINGW64 /c/git/exp8 (feature|CHERRY-PICKING)
+$ git show 9206c52
+commit 9206c52a7a23286ef2fa3845d076d75576929dc0
+Author: manoj <1by23ai076@bmsit.in>
+Date:   Tue Nov 12 11:12:49 2024 +0530
+
+    8th exp demo
+
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..9b4d1d6
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1 @@
++ hi hello who r u
+
+
